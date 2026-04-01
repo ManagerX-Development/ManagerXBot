@@ -1,0 +1,141 @@
+#########################################################
+# General System Messages
+#########################################################
+general:
+  error_types:
+    no_permission: "Du hast keine Berechtigung, diesen Befehl auszuführen."
+    user_not_found: "Benutzer nicht gefunden."
+    bot_error: "Ein Fehler ist im Bot aufgetreten. Bitte versuche es später erneut."
+    option_missing: "Eine erforderliche Option fehlt."
+    bot_has_no_permission: "Der Bot hat nicht die erforderlichen Berechtigungen, um diesen Befehl auszuführen."
+
+#########################################################
+# Settings Cog
+#########################################################
+cog_settings:
+  language:
+    error_types:
+      unsupported_language: "Die angegebene Sprache wird nicht unterstützt."
+      same_language: "Die angegebene Sprache ist bereits eingestellt."
+      failed_set_language: "Fehler beim Einstellen der Sprache."
+      language_not_set: "Du hast noch keine bevorzugte Sprache eingestellt."
+
+    message:
+      language_set: "Die Sprache wurde auf {language} gesetzt."
+      current_language: "Deine aktuelle bevorzugte Sprache ist {language}."
+
+#########################################################
+# Fun Cogs (Games & Entertainment)
+#########################################################
+cog_4gewinnt:
+  error_types:
+    not_your_turn: "Es ist nicht dein Zug."
+    this_column_full: "Diese Spalte ist voll!"
+    is_opponent_bot: "Du kannst nicht gegen einen Bot spielen!"
+    is_opponent_self: "Du kannst nicht gegen dich selbst spielen!"
+
+  win_types:
+    win: "Spiel vorbei! {winner} hat gewonnen!\n\n{board_str}"
+    draw: "Unentschieden!\n\n{board_str}"
+
+  message:
+    start_game: "4 Gewinnt: {author_mention} (🔴) vs {opponent_mention} (🟡)\n{author_mention} fängt an!\n\n"
+    player_turn: "{view.current_player.mention} ist jetzt dran!\n\n{board_str}"
+
+cog_tictactoe:
+  error_types:
+    not_your_turn: "Es ist nicht dein Zug."
+    this_cell_taken: "Dieses Feld ist bereits belegt!"
+    is_opponent_bot: "Du kannst nicht gegen einen Bot spielen!"
+    is_opponent_self: "Du kannst nicht gegen dich selbst spielen!"
+
+  win_types:
+    win: "Spiel vorbei! {winner} hat gewonnen!"
+    draw: "Unentschieden!"
+
+  message: 
+    start_game: "Tic Tac Toe: {author_mention} (X) gegen {opponent_mention} (O)\n{author_mention} fängt an!"
+
+#########################################################
+# Utility Cogs (Weather, Tools)
+#########################################################
+cog_weather:
+  error_types:
+    city_not_found: "⚠️ Stadt nicht gefunden."
+    api_error: "❌ Fehler bei der Wetter-API."
+
+  messages:
+    weather_report: "# 🌤️ Wetterbericht für {city}, {country}:\n\n"
+    temperature: "**🌡️ Temperatur:** {temperature}°C\n"
+    humidity: "**💧 Luftfeuchtigkeit:** {humidity}%\n"
+    wind_speed: "**💨 Windgeschwindigkeit:** {wind_speed} km/h ({wind_dir})\n"
+    condition: "**☁️ Wetterbedingungen:** {condition}\n"
+    visibility: "**🌫️ Sichtweite:** {visibility} km\n"
+    pressure: "**🧭 Luftdruck:** {pressure} hPa\n"
+
+#########################################################
+# Server Management (Autorole, etc.)
+#########################################################
+cog_autorole:
+  error_types:
+    role_to_high:
+      title: "❌ Fehler"
+      desc: "Ich kann diese Rolle nicht vergeben, da sie höher oder gleich meiner höchsten Rolle ist!"
+    role_managed:
+      title: "❌ Fehler"
+      desc: "Diese Rolle wird von einer Integration verwaltet und kann nicht als Autorole hinzugefügt werden!"
+    not_found:
+      title: "❌ Autorole nicht gefunden"
+      desc: "Es existiert keine Autorole mit der ID `{autorole_id}`!"
+    wrong_guild:
+      title: "❌ Fehler"
+      desc: "Diese Autorole gehört nicht zu diesem Server!"
+    no_roles:
+      title: "❌ Keine Autoroles"
+      desc: "Es sind keine Autoroles für diesen Server eingerichtet!"
+    role_deleted:
+      title: "⚠️ Rolle nicht gefunden"
+      desc: "Die konfigurierte Rolle für `{autorole_id}` existiert nicht mehr!"
+
+  messages:
+    add_success:
+      title: "✅ Autorole hinzugefügt"
+      desc: "Neue Mitglieder erhalten automatisch die Rolle {role}\n\n**Autorole-ID:** `{autorole_id}`"
+    remove_success:
+      title: "✅ Autorole entfernt"
+      desc: "Die Autorole `{autorole_id}` wurde erfolgreich entfernt!"
+    toggle_success:
+      enabled_title: "✅ Autorole aktiviert"
+      enabled_desc: "Die Autorole `{autorole_id}` wurde aktiviert!"
+      disabled_title: "✅ Autorole deaktiviert"
+      disabled_desc: "Die Autorole `{autorole_id}` wurde deaktiviert!"
+    list:
+      title: "📋 Autoroles Liste"
+      desc: "Alle Autoroles für **{guild_name}**"
+      role_deleted: "⚠️ **Rolle gelöscht**"
+    info:
+      title: "ℹ️ Autorole Information"
+      desc: "Details zur Autorole `{autorole_id}`"
+
+  system:
+    audit_reason: "Autorole System"
+    console_log: "✅ Autoroles [{role_names}] wurden {member_name} zugewiesen"
+    error_forbidden: "❌ Keine Berechtigung, um Rollen zu vergeben"
+    error_http: "❌ Fehler beim Zuweisen der Rollen: {error}"
+
+#########################################################
+# About Cog (System Information)
+#########################################################
+cog_about:
+  messages:
+    title: "# ℹ️ Über ManagerX"
+    description: "Ein fortschrittlicher Management-Bot entwickelt für professionelle Communities.\nManagerX bietet umfangreiche Tools für Moderation, Statistiken und Server-Verwaltung."
+    dev_header: "## 👨💻 Entwicklung"
+    dev_info: "Entwickelt von **ManagerX Development**\n❯ [🌐 Website](https://managerx-bot.de)\n❯ [💬 Support Server](https://discord.gg/9T28DWup3g)"
+    stats_header: "## 📊 Statistiken"
+    stats_info: "❯ **Server:** `{server_count}`\n❯ **User:** `{member_count}`\n❯ **Ping:** {ping}\n❯ **Uptime:** {uptime}"
+    tech_header: "## 🛠️ Technik & Versionen"
+    tech_info: "❯ **Python:** `v{python_version}`\n❯ **PyCord:** `v{discord_version}`\n❯ **EzCord:** `v{ezcord_version}`"
+    system_header: "## 🖥️ System"
+    system_info: "❯ **OS:** `{os}`\n❯ **RAM:** {ram}\n❯ **CPU:** {cpu}\n❯ **Speicher:** {storage}"
+    footer: "{year} ManagerX Development • ManagerX v2.0.0"

@@ -1,0 +1,141 @@
+#########################################################
+# General System Messages
+#########################################################
+general:
+  error_types:
+    no_permission: "You do not have permission to execute this command."
+    user_not_found: "User not found."
+    bot_error: "An error occurred within the bot. Please try again later."
+    option_missing: "A required option is missing."
+    bot_has_no_permission: "The bot does not have the necessary permissions to execute this command."
+
+#########################################################
+# Settings Cog
+#########################################################
+cog_settings:
+  language:
+    error_types:
+      unsupported_language: "The specified language is not supported."
+      same_language: "The specified language is already set."
+      failed_set_language: "Failed to set the language."
+      language_not_set: "You have not set a preferred language yet."
+      
+    message:
+      language_set: "Language has been set to {language}."
+      current_language: "Your current preferred language is {language}."
+
+#########################################################
+# Fun Cogs (Games & Entertainment)
+#########################################################
+cog_4gewinnt:
+  error_types:
+    not_your_turn: "It's not your turn."
+    this_column_full: "This column is full!"
+    is_opponent_bot: "You cannot play against a bot!"
+    is_opponent_self: "You cannot play against yourself!"
+
+  win_types:
+    win: "Game over! {winner} won!\n\n{board_str}"
+    draw: "It's a draw!\n\n{board_str}"
+  
+  message:
+    start_game: "Connect Four: {author_mention} (🔴) vs {opponent_mention} (🟡)\n{author_mention} starts!\n\n"
+    player_turn: "{view.current_player.mention}'s turn now!\n\n{board_str}"
+
+cog_tictactoe:
+  error_types:
+    not_your_turn: "It's not your turn."
+    this_cell_taken: "This cell is already taken!"
+    is_opponent_bot: "You cannot play against a bot!"
+    is_opponent_self: "You cannot play against yourself!"
+
+  win_types:
+    win: "Game over! {winner} won!"
+    draw: "It's a draw!"
+
+  message: 
+    start_game: "Tic Tac Toe: {author_mention} (X) vs {opponent_mention} (O)\n{author_mention} starts!"
+
+#########################################################
+# Utility Cogs (Weather, Tools)
+#########################################################
+cog_weather:
+  error_types:
+    city_not_found: "⚠️ City not found."
+    api_error: "❌ Error with the weather API."
+
+  messages:
+    weather_report: "# 🌤️ Weather report for {city}, {country}:\n\n"
+    temperature: "**🌡️ Temperature:** {temperature}°C\n"
+    humidity: "**💧 Humidity:** {humidity}%\n"
+    wind_speed: "**💨 Wind:** {wind_speed} km/h ({wind_dir})\n"
+    condition: "**☁️ Condition:** {condition}\n"
+    visibility: "**🌫️ Visibility:** {visibility} km\n"
+    pressure: "**🧭 Pressure:** {pressure} hPa\n"
+
+#########################################################
+# Server Management (Autorole, etc.)
+#########################################################
+cog_autorole:
+  error_types:
+    role_to_high:
+      title: "❌ Error"
+      desc: "I cannot assign this role because it is higher than or equal to my highest role!"
+    role_managed:
+      title: "❌ Error"
+      desc: "This role is managed by an integration and cannot be added as an autorole!"
+    not_found:
+      title: "❌ Autorole Not Found"
+      desc: "There is no autorole with the ID `{autorole_id}`!"
+    wrong_guild:
+      title: "❌ Error"
+      desc: "This autorole does not belong to this server!"
+    no_roles:
+      title: "❌ No Autoroles"
+      desc: "No autoroles have been set up for this server!"
+    role_deleted:
+      title: "⚠️ Role Not Found"
+      desc: "The configured role for `{autorole_id}` no longer exists!"
+
+  messages:
+    add_success:
+      title: "✅ Autorole Added"
+      desc: "New members will now automatically receive the role {role}\n\n**Autorole-ID:** `{autorole_id}`"
+    remove_success:
+      title: "✅ Autorole Removed"
+      desc: "The autorole `{autorole_id}` was successfully removed!"
+    toggle_success:
+      enabled_title: "✅ Autorole Enabled"
+      enabled_desc: "The autorole `{autorole_id}` has been enabled!"
+      disabled_title: "✅ Autorole Disabled"
+      disabled_desc: "The autorole `{autorole_id}` has been disabled!"
+    list:
+      title: "📋 Autoroles List"
+      desc: "All autoroles for **{guild_name}**"
+      role_deleted: "⚠️ **Role deleted**"
+    info:
+      title: "ℹ️ Autorole Information"
+      desc: "Details for autorole `{autorole_id}`"
+
+  system:
+    audit_reason: "Autorole System"
+    console_log: "✅ Autoroles [{role_names}] were assigned to {member_name}"
+    error_forbidden: "❌ Missing permissions to assign roles"
+    error_http: "❌ Error while assigning roles: {error}"
+    
+#########################################################
+# About Cog (System Information)
+#########################################################
+cog_about:
+  messages:
+    title: "# ℹ️ About ManagerX"
+    description: "An advanced management bot developed for professional communities.\nManagerX offers comprehensive tools for moderation, statistics, and server management."
+    dev_header: "## 👨💻 Development"
+    dev_info: "Developed by **ManagerX Development**\n❯ [🌐 Website](https://managerx-bot.de)\n❯ [💬 Support Server](https://discord.gg/9T28DWup3g)"
+    stats_header: "## 📊 Statistics"
+    stats_info: "❯ **Servers:** `{server_count}`\n❯ **Users:** `{member_count}`\n❯ **Ping:** {ping}\n❯ **Uptime:** {uptime}"
+    tech_header: "## 🛠️ Technology & Versions"
+    tech_info: "❯ **Python:** `v{python_version}`\n❯ **PyCord:** `v{discord_version}`\n❯ **EzCord:** `v{ezcord_version}`"
+    system_header: "## 🖥️ System"
+    system_info: "❯ **OS:** `{os}`\n❯ **RAM:** {ram}\n❯ **CPU:** {cpu}\n❯ **Storage:** {storage}"
+    footer: "{year} ManagerX Development • ManagerX v2.0.0"
